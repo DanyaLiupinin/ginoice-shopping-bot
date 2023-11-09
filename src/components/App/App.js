@@ -1,10 +1,15 @@
 
+import { Routes, Route } from "react-router-dom";
+
 import './App.css';
+import Main from '../Main/Main';
 
 function App() {
   return (
     <div className="App">
-      <h1>1111111111111</h1>
+      <Routes>
+        <Route path='/' element={<Main />} />
+      </Routes>
     </div>
   );
 }
