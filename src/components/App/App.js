@@ -57,6 +57,17 @@ function App() {
     setLists(updatedLists)
   }
 
+  const checkProductHandler = (listId, productId) => {
+
+    const newProductStatus = lists[listId].products[productId].status === 'not-checked' ?
+      'checked' :
+      'not-checked'
+
+    const updatedLists = [...lists]
+    updatedLists[listId].products[productId].status = newProductStatus
+    setLists(updatedLists)
+  }
+
   useEffect(() => {
     if (localStorage.getItem("lists")) {
       const lists = JSON.parse(localStorage.getItem("lists"));
@@ -90,6 +101,7 @@ function App() {
               onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists}
               createProductHandler={createProductHandler}
               deleteProductHandler={deleteProductHandler}
+              checkProductHandler={checkProductHandler}
             />}
           />
         </Routes>

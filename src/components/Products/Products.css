@@ -2,7 +2,6 @@
     width: 100%;
     min-height: 100vh;
     text-align: center;
-    padding-bottom: 50px;
 }
 
 .products__title {
@@ -35,7 +34,7 @@
     width: 90%;
     height: 35px;
     color: white;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .list-doesnt-exist {

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import CreateItem from '../CreateItem/CreateItem';
 import Product from './Product/Product';
 
-const Products = ({ lists, onCloseItemCreation, isCreateItemActive, onOpenItemCreation, createProductHandler, deleteProductHandler }) => {
+const Products = ({ lists, onCloseItemCreation, isCreateItemActive, onOpenItemCreation, createProductHandler, deleteProductHandler, checkProductHandler }) => {
 
     const [list, setList] = useState();
 
@@ -16,6 +16,10 @@ const Products = ({ lists, onCloseItemCreation, isCreateItemActive, onOpenItemCr
 
     const onDeleteProduct = (productId) => {
         deleteProductHandler(id.id, productId)
+    }
+
+    const onCheckProduct = (productId) => {
+        checkProductHandler(id.id, productId)
     }
 
     useEffect(() => {
@@ -44,7 +48,9 @@ const Products = ({ lists, onCloseItemCreation, isCreateItemActive, onOpenItemCr
                                     <>
                                         {list.products.map((product, index) => {
                                             return (
-                                                <Product key={index} name={product.name} id={index} onDeleteProduct={onDeleteProduct}/>
+                                                <Product key={index} name={product.name} status={product.status} id={index} onDeleteProduct={onDeleteProduct} 
+                                                onCheckProduct={onCheckProduct}
+                                                />
                                             )
                                         })
                                         }
