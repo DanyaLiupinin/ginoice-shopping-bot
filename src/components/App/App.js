@@ -1,10 +1,18 @@
+import "./App.css";
 
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Main from "../Main/Main";
 
 function App() {
+  const tg = window.Telegram.WebApp;
+  tg.expand(); 
+
+
   return (
     <div className="App">
-      <h1>1111111111111</h1>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
     </div>
   );
 }

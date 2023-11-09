@@ -1,0 +1,10 @@
+
+
+@font-face {
+     font-family: 'font';
+     font-style: normal;
+     font-weight: 400;
+     font-display: swap;
+     src: 
+          url("./font.ttf") format("truetype")
+}
