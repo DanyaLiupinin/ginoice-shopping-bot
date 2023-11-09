@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Main from "../Main/Main";
+import Products from "../Products/Products";
 
 function App() {
 
@@ -49,16 +50,20 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-          {/*<Routes>
+          <Routes>
       
         <Route
         exact
           path="/"
           element={<Main lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler}/>}
         />
-      </Routes> */}
+
+<Route
+          path="/list/:id"
+          element={<Products lists={lists} />}
+        />
+      </Routes> 
       
-      <Main lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler}/>
       </div>
     </div>
   );

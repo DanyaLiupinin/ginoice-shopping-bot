@@ -1,5 +1,5 @@
 import './Lists.css';
-import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 const Lists = ({lists, deleteListHandler}) => {
 
@@ -10,9 +10,11 @@ const Lists = ({lists, deleteListHandler}) => {
                             lists.map((list, index) => {
                                 return (
                                     <div className='list' key={index}>
-                                        <p className='title'>
+                                        <Link to={`/list/${index}`}>
+                                        <p className='list__title'>
                                             {list.name}
                                         </p>
+                                        </Link>
                                         <button onClick={() => deleteListHandler(index)} className='list__delete-btn'></button>
                                     </div>
                                 )
