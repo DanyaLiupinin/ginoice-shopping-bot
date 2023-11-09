@@ -8,6 +8,8 @@ import Products from "../Products/Products";
 
 function App() {
 
+// добавить курсор поинтеры кнопкам 
+
   const [lists, setLists] = useState([]);
   const [isCreateItemActive, setCreateItemActive] = useState(false);
 
