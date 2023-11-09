@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import './CreateItem.css';
+import './EditItem.css';
 
-const CreateItem = ({onClose, isActive, onCreate, type, action}) => {
+const EditItem = ({onClose, isActive, onSubmit, prevValue}) => {
 
     const [value, setValue] = useState('');
 
@@ -10,7 +10,7 @@ const CreateItem = ({onClose, isActive, onCreate, type, action}) => {
     const onCreateList = (e) => {
         e.preventDefault();
         if (!value == '') {
-            onCreate(value);
+            onSubmit(value);
             setValue('');
             onClose();
         }
@@ -24,15 +24,15 @@ const CreateItem = ({onClose, isActive, onCreate, type, action}) => {
     return (
         <div className={`createItem ${isActive ? 'createItem_active' : ''}`}>
             <form className='createItem__form' onSubmit={onCreateList}>
-            <h2 className='createItem__title' >your {type} name</h2>
+            <h2 className='createItem__title'>new name for {prevValue}</h2>
                 <input min={1} max={25} value={value} onChange={(e) => setValue(e.target.value)}></input>
                 <div className='createLit__buttons'>
                     <button type='button' onClick={onClosePopup}>Cancel</button>
-                    <button type='submit'>{action}</button>
+                    <button type='submit'>Save</button>
                 </div>
             </form>
         </div>
     )
 }
 
-export default CreateItem;
+export default EditItem;

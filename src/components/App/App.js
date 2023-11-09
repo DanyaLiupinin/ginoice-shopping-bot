@@ -57,6 +57,7 @@ function App() {
     setLists(updatedLists)
   }
 
+
   const checkProductHandler = (listId, productId) => {
 
     const newProductStatus = lists[listId].products[productId].status === 'not-checked' ?
@@ -65,6 +66,13 @@ function App() {
 
     const updatedLists = [...lists]
     updatedLists[listId].products[productId].status = newProductStatus
+    setLists(updatedLists)
+  }
+
+  const editProductHandler = (listId, productId, newVal) => {
+
+    const updatedLists = [...lists]
+    updatedLists[listId].products[productId].name = newVal
     setLists(updatedLists)
   }
 
@@ -102,6 +110,7 @@ function App() {
               createProductHandler={createProductHandler}
               deleteProductHandler={deleteProductHandler}
               checkProductHandler={checkProductHandler}
+              editProductHandler={editProductHandler}
             />}
           />
         </Routes>

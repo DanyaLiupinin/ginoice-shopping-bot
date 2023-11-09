@@ -14,6 +14,7 @@ const Main = ({ lists, createListHandler, deleteListHandler, onCloseItemCreation
                     onClose={onCloseItemCreation}
                     onCreate={createListHandler}
                     type={'list'}
+                    action={'create'}
                 />
 
                 <h1 className="main__title">My lists</h1>

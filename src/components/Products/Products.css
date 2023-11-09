@@ -2,6 +2,8 @@
     width: 100%;
     min-height: 100vh;
     text-align: center;
+    
+    position: relative;
 }
 
 .products__title {
@@ -40,4 +42,22 @@
 .list-doesnt-exist {
     color: white;
     font-size: 30px;
+}
+
+.products__goback-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: unset;
+    color: white;
+    border: 0;
+    padding: 0;
+    font-size: 50px;
+    text-align: center;
+    margin-left: 30px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

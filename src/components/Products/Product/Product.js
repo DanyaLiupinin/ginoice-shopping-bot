@@ -1,8 +1,14 @@
+
 import './Product.css';
 
-const Product = ({ name, id, onDeleteProduct, onCheckProduct, status }) => {
+
+const Product = ({ name, id, onDeleteProduct, onCheckProduct, status, onOpenItemCreation, onEditProduct, onOpenItemEdition }) => {
+
+      
+    //добавить общий стиль для кнопки
     return (
         <div className='product'>
+           
             <button
                 onClick={() => { onCheckProduct(id) }}
                 className={`product__checkbox ${status === 'checked' ? 'product__checkbox_checked' : ''} `}
@@ -10,6 +16,11 @@ const Product = ({ name, id, onDeleteProduct, onCheckProduct, status }) => {
             />
 
             <p className='product__name'>{name}</p>
+            <button
+                onClick={() => onOpenItemEdition(name, id)}
+                className='product__edit-btn'
+                type='button'
+            />
             <button
                 onClick={() => onDeleteProduct(id)}
                 className='product__delete-btn'

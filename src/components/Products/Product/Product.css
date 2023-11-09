@@ -2,7 +2,7 @@
     width: 90%;
     height: 40px;
     display: grid;
-    grid-template-columns: 10% 80% 10%;
+    grid-template-columns: 10% 70% 10% 10%;
     background-color: #353535;
     border-radius: 20px;
     padding: 0 10px;
@@ -31,6 +31,23 @@
 .product__checkbox_checked {
     background-image: url('../../../images/checked.svg');
 }
+
+.product__edit-btn {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    background-color: unset;
+    opacity: .8;
+    background-image: url('../../../images/edit.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
 
 .product__delete-btn {
     width: 80%;
