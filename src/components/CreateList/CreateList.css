@@ -2,12 +2,15 @@
     height: 100vh;
     color: #D2C2C2;
     position: fixed;
-    top: 0;
-    bottom: 0;
+    bottom: -100vh;
     left: 0;
     right: 0;
     background-color: #131313;
     transition: .3s;
+}
+
+.createList_active {
+    bottom: 0;
 }
 
 .createList__form {
@@ -29,6 +32,7 @@
     font-size: 20px;
     width: 100%;
     padding-left: 10px;
+    text-align: left;
 }
 
 .createList__form input {
