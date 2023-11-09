@@ -50,6 +50,13 @@ function App() {
     setLists(updatedLists)
   }
 
+  const deleteProductHandler = (listId, productId) => {
+    const updatedLists = [...lists]
+    updatedLists[listId].products.splice(productId, 1)
+
+    setLists(updatedLists)
+  }
+
   useEffect(() => {
     if (localStorage.getItem("lists")) {
       const lists = JSON.parse(localStorage.getItem("lists"));
@@ -82,6 +89,7 @@ function App() {
             element={<Products
               onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists}
               createProductHandler={createProductHandler}
+              deleteProductHandler={deleteProductHandler}
             />}
           />
         </Routes>
