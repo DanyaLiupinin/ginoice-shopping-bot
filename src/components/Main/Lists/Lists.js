@@ -1,9 +1,7 @@
 import './Lists.css';
 import { useState } from 'react';
 
-const Lists = ({lists}) => {
-    
-    const [isChecked, setChecked] = useState(false);
+const Lists = ({lists, deleteListHandler}) => {
 
     return (
         
@@ -15,7 +13,7 @@ const Lists = ({lists}) => {
                                         <p className='title'>
                                             {list.name}
                                         </p>
-                                        <button className='list__delete-btn'></button>
+                                        <button onClick={() => deleteListHandler(index)} className='list__delete-btn'></button>
                                     </div>
                                 )
                             })
