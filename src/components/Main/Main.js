@@ -1,9 +1,10 @@
+import { useState } from "react";
+
 import "./Main.css";
 
 import CreateList from "../CreateList/CreateList";
 import Lists from "./Lists/Lists";
 import Empty from "./Empty/Empty";
-import { useState } from "react";
 
 const Main = ({ lists, createListHandler, deleteListHandler }) => {
     const [isCreateListActive, setCreateListActive] = useState(false);
@@ -11,7 +12,6 @@ const Main = ({ lists, createListHandler, deleteListHandler }) => {
     const onCloseListCreation = () => {
         setCreateListActive(false);
     };
-    console.log(lists);
 
     return (
         <>
@@ -20,7 +20,6 @@ const Main = ({ lists, createListHandler, deleteListHandler }) => {
                     isActive={isCreateListActive}
                     onClose={onCloseListCreation}
                     onCreate={createListHandler}
-                    setActive={setCreateListActive}
                 />
 
                 <h1 className="main__title">My lists</h1>

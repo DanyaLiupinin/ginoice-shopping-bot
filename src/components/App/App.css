@@ -2,3 +2,8 @@
     background-color: #131313;
     font-family: 'font', 'Courier New', Courier, monospace;
 }
+
+.content {
+    max-width: 500px;
+    margin: 0 auto;
+}

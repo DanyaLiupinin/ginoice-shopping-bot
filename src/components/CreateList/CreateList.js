@@ -1,7 +1,8 @@
-import './CreateList.css';
 import { useState } from "react";
 
-const CreateList = ({onClose, isActive, onCreate, setActive}) => {
+import './CreateList.css';
+
+const CreateList = ({onClose, isActive, onCreate}) => {
 
     const [value, setValue] = useState('');
 

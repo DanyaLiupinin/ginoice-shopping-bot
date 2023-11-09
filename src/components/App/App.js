@@ -1,9 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
+
 import Main from "../Main/Main";
 
 function App() {
+
   const [lists, setLists] = useState([]);
   const isFirstRender = useRef(true);
 
@@ -45,12 +48,14 @@ function App() {
 
   return (
     <div className="App">
+      <div className="content">
       <Routes>
         <Route
           path="/"
           element={<Main lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler}/>}
         />
       </Routes>
+      </div>
     </div>
   );
 }
