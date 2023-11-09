@@ -25,19 +25,34 @@
     margin-top: 15%;
 }
 
+.products__add-button {
+    background-color: #43bcae95;
+    border: none;
+    box-shadow: none;
+    padding: 4px;
+    border-radius: 15px;
+    width: 90%;
+    height: 35px;
+    color: white;
+    margin-top: 20%;
+}
+
 
 /* PRODUCT */
 
 .product {
     width: 90%;
-    outline: 1px solid red;
-    height: 50px;
+    height: 40px;
     display: grid;
     grid-template-columns: 10% 80% 10%;
     background-color: #353535;
     border-radius: 20px;
     padding: 0 10px;
     box-sizing: border-box;
+}
+
+.product__name {
+    margin: auto 0;
 }
 
 .product__checkbox {

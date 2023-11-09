@@ -1,25 +1,19 @@
-import { useState } from "react";
-
 import "./Main.css";
 
-import CreateList from "../CreateList/CreateList";
+import CreateItem from "../CreateItem/CreateItem";
 import Lists from "./Lists/Lists";
 import Empty from "./Empty/Empty";
 
-const Main = ({ lists, createListHandler, deleteListHandler }) => {
-    const [isCreateListActive, setCreateListActive] = useState(false);
-
-    const onCloseListCreation = () => {
-        setCreateListActive(false);
-    };
-
+const Main = ({ lists, createListHandler, deleteListHandler, onCloseItemCreation, isCreateItemActive, onOpenItemCreation }) => {
+   
     return (
         <>
             <section className="main">
-                <CreateList
-                    isActive={isCreateListActive}
-                    onClose={onCloseListCreation}
+                <CreateItem
+                    isActive={isCreateItemActive}
+                    onClose={onCloseItemCreation}
                     onCreate={createListHandler}
+                    type={'list'}
                 />
 
                 <h1 className="main__title">My lists</h1>
@@ -27,7 +21,7 @@ const Main = ({ lists, createListHandler, deleteListHandler }) => {
                 {lists && lists.length > 0 ? <Lists lists={lists} deleteListHandler={deleteListHandler} /> : <Empty />}
 
                 <button
-                    onClick={() => setCreateListActive(true)}
+                    onClick={onOpenItemCreation}
                     className="main__create-btn"
                 >
                     create

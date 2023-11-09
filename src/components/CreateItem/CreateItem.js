@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import './CreateList.css';
+import './CreateItem.css';
 
-const CreateList = ({onClose, isActive, onCreate}) => {
+const CreateItem = ({onClose, isActive, onCreate, type}) => {
 
     const [value, setValue] = useState('');
 
@@ -22,9 +22,9 @@ const CreateList = ({onClose, isActive, onCreate}) => {
     }
 
     return (
-        <div className={`createList ${isActive ? 'createList_active' : ''}`}>
-            <form className='createList__form' onSubmit={onCreateList}>
-            <h2 className='createList__title' >your list name</h2>
+        <div className={`createItem ${isActive ? 'createItem_active' : ''}`}>
+            <form className='createItem__form' onSubmit={onCreateList}>
+            <h2 className='createItem__title' >your {type} name</h2>
                 <input min={1} max={25} value={value} onChange={(e) => setValue(e.target.value)}></input>
                 <div className='createLit__buttons'>
                     <button type='button' onClick={onClosePopup}>Cancel</button>
@@ -35,4 +35,4 @@ const CreateList = ({onClose, isActive, onCreate}) => {
     )
 }
 
-export default CreateList;
+export default CreateItem;

@@ -1,12 +1,18 @@
 import { useParams } from 'react-router-dom';
 import './Products.css';
 import { useEffect, useState } from 'react';
+import CreateItem from '../CreateItem/CreateItem';
 
-const Products = ({ lists }) => {
+const Products = ({ lists, onCloseItemCreation, isCreateItemActive, onOpenItemCreation }) => {
 
     const [list, setList] = useState();
 
     const id = useParams()
+
+
+    
+
+
 
     useEffect(() => {
 
@@ -18,6 +24,12 @@ const Products = ({ lists }) => {
 
     return (
         <div className='products' >
+            <CreateItem
+                    isActive={isCreateItemActive}
+                    onClose={onCloseItemCreation}
+                    //onCreate={createListHandler}
+                    type={'product'}
+                />
             {
                 list ?
                     <>
@@ -37,6 +49,10 @@ const Products = ({ lists }) => {
                                 <p className='product__name'>banana</p>
                                 <button type='button' className='product__delete-btn'></button>
                             </div>
+
+                            <button onClick={onOpenItemCreation} type='button' className='products__add-button'>
+                                New product
+                            </button>
                             
                         </div>
                     </>

@@ -9,7 +9,17 @@ import Products from "../Products/Products";
 function App() {
 
   const [lists, setLists] = useState([]);
+  const [isCreateItemActive, setCreateItemActive] = useState(false);
+
   const isFirstRender = useRef(true);
+
+  const onOpenItemCreation = () => {
+    setCreateItemActive(true);
+};
+
+  const onCloseItemCreation = () => {
+    setCreateItemActive(false);
+};
 
   const createListHandler = (listName) => {
     const newList = { name: listName, products: [] };
@@ -55,12 +65,13 @@ function App() {
         <Route
         exact
           path="/"
-          element={<Main lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler}/>}
+          element={<Main onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler}/>}
         />
 
 <Route
           path="/list/:id"
-          element={<Products lists={lists} />}
+          element={<Products
+            onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists} />}
         />
       </Routes> 
       

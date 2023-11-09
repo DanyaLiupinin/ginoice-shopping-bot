@@ -1,4 +1,4 @@
-.createList {
+.createItem {
     height: 100vh;
     color: #D2C2C2;
     position: fixed;
@@ -12,11 +12,11 @@
     max-width: 500px;
 }
 
-.createList_active {
+.createItem_active {
     bottom: 0;
 }
 
-.createList__form {
+.createItem__form {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +30,7 @@
     align-items: center;
 }
 
-.createList__title {
+.createItem__title {
     margin: 0;
     font-size: 20px;
     width: 100%;
@@ -38,7 +38,7 @@
     text-align: left;
 }
 
-.createList__form input {
+.createItem__form input {
     background-color: none;
     margin: 20px 0 0;
     padding: 0 0 0 10px;
@@ -51,7 +51,7 @@
     font-size: 18px;
 }
 
-.createList__form input:focus {
+.createItem__form input:focus {
     border: 0;
     outline: none;
 }
