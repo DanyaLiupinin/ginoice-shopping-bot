@@ -1,52 +1,41 @@
-import './Main.css';
+import "./Main.css";
 
-import CreateList from '../CreateList/CreateList';
-import basketImage from '../../images/basket.svg';
-import Lists from './Lists/Lists';
-import { useState } from 'react';
+import CreateList from "../CreateList/CreateList";
+import Lists from "./Lists/Lists";
+import Empty from "./Empty/Empty";
+import { useState } from "react";
 
-const Main = ({ lists }) => {
-
+const Main = ({ lists, createListHandler }) => {
     const [isCreateListActive, setCreateListActive] = useState(false);
 
     const onCloseListCreation = () => {
-        setCreateListActive(false)
-    }
-    console.log(lists)
+        setCreateListActive(false);
+    };
+    console.log(lists);
 
     return (
         <>
-
-
-
-            <section className='main'>
+            <section className="main">
                 <CreateList
                     isActive={isCreateListActive}
                     onClose={onCloseListCreation}
+                    onCreate={createListHandler}
+                    setActive={setCreateListActive}
                 />
-                <h1 className='main__title'>Shopping list</h1>
 
-                {lists && lists.length > 0 ?
-                    <div className='main__lists'>
-                        <Lists lists={lists} />
-                    </div> :
-                    <div className='main__empty-list'>
-                        <img className='main__image' src={basketImage} alt='basket' />
-                        <p className='main__caption'>
-                            You have not added any shopping lists
-                            Tap the button below to create one now
-                        </p>
-                    </div>
-                }
+                <h1 className="main__title">My lists</h1>
 
-                <button onClick={() => setCreateListActive(true)} className='main__create-btn'>
+                {lists && lists.length > 0 ? <Lists lists={lists} /> : <Empty />}
+
+                <button
+                    onClick={() => setCreateListActive(true)}
+                    className="main__create-btn"
+                >
                     create
                 </button>
-
-
             </section>
         </>
-    )
-}
+    );
+};
 
 export default Main;

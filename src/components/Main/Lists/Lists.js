@@ -9,9 +9,9 @@ const Lists = ({lists}) => {
         
         <div className='lists'>
                         {
-                            lists.map((list) => {
+                            lists.map((list, index) => {
                                 return (
-                                    <div className='list'>
+                                    <div className='list' key={index}>
                                         <p className='title'>
                                             {list.name}
                                         </p>

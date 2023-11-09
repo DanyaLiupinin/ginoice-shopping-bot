@@ -1,23 +1,17 @@
 .main {
     background-color: #131313;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
     
     color: #D2C2C2;
 }
 
 .main__title {
     padding-top: 20%;
+    margin: 0;
 }
 
-.main__image {
-    margin-top: 15%;
-}
 
-.main__caption {
-    margin: 30px auto 0;
-    width: 80%;
-}
 
 .main__create-btn {
     background-color: #43bcae95;
@@ -30,45 +24,4 @@
     height: 30px;
     color: white;
     margin-top: 20%;
-}
-
-/* LISTS */
-
-.main__lists {
-display: flex;
-flex-direction: column;
-gap: 20px;
-
-}
-
-.main__list {
-    background-color: #353535;
-    width: 90%;
-    border-radius: 15px;
-    margin: 0 auto;
-    height: 40px;
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-    align-items: center;
-}
-
-.list__title {
-    margin: 0;
-    color: white;
-    font-size: 20px;
-}
-
-.list__check-btn {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: unset;
-    background-image: url('../../images/notchecked.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    box-shadow: none;
-    border: 0;
-    outline: 1px solid red;
 }
