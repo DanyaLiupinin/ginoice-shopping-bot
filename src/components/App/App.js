@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import { Routes, Route  } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 
@@ -15,11 +15,11 @@ function App() {
 
   const onOpenItemCreation = () => {
     setCreateItemActive(true);
-};
+  };
 
   const onCloseItemCreation = () => {
     setCreateItemActive(false);
-};
+  };
 
   const createListHandler = (listName) => {
     const newList = { name: listName, products: [] };
@@ -36,9 +36,18 @@ function App() {
     for (let i = 0; i < lists.length; i++) {
       if (!(i === key)) {
         newListsArr.push(lists[i])
-      } 
+      }
     }
     setLists(newListsArr)
+  }
+
+  const createProductHandler = (listId, productName) => {
+    const newProduct = { name: productName, status: 'not-checked' }
+
+    const updatedLists = [...lists]
+    updatedLists[listId] = { ...lists[listId], products: [...lists[listId].products, newProduct] }
+
+    setLists(updatedLists)
   }
 
   useEffect(() => {
@@ -60,21 +69,23 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-          <Routes>
-      
-        <Route
-        exact
-          path="/"
-          element={<Main onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler}/>}
-        />
+        <Routes>
 
-<Route
-          path="/list/:id"
-          element={<Products
-            onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists} />}
-        />
-      </Routes> 
-      
+          <Route
+            exact
+            path="/"
+            element={<Main onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler} />}
+          />
+
+          <Route
+            path="/list/:id"
+            element={<Products
+              onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists}
+              createProductHandler={createProductHandler}
+            />}
+          />
+        </Routes>
+
       </div>
     </div>
   );

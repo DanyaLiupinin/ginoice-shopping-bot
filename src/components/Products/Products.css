@@ -1,7 +1,8 @@
 .products {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
+    padding-bottom: 50px;
 }
 
 .products__title {
@@ -9,7 +10,6 @@
     text-align: center;
     font-size: 32px;
     padding-top: 10%;
-
 }
 
 .products__empty {
@@ -34,58 +34,10 @@
     width: 90%;
     height: 35px;
     color: white;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
-
-/* PRODUCT */
-
-.product {
-    width: 90%;
-    height: 40px;
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-    background-color: #353535;
-    border-radius: 20px;
-    padding: 0 10px;
-    box-sizing: border-box;
-}
-
-.product__name {
-    margin: auto 0;
-}
-
-.product__checkbox {
-    background-color: unset;
-    background-image: url('../../images/notchecked.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-}
-
-.product__checkbox_checked {
-    background-image: url('../../images/checked.svg');
-}
-
-.product__delete-btn {
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    background-color: unset;
-    opacity: .8;
-    background-image: url('../../images/krestik.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    box-shadow: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
+.list-doesnt-exist {
+    color: white;
+    font-size: 30px;
 }
