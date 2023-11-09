@@ -49,12 +49,16 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-      <Routes>
+          {/*<Routes>
+      
         <Route
+        exact
           path="/"
           element={<Main lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler}/>}
         />
-      </Routes>
+      </Routes> */}
+      
+      <Main lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler}/>
       </div>
     </div>
   );
