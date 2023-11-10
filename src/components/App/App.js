@@ -8,8 +8,6 @@ import Products from "../Products/Products";
 
 function App() {
 
-// добавить курсор поинтеры кнопкам 
-
   const [lists, setLists] = useState([]);
   const [isCreateItemActive, setCreateItemActive] = useState(false);
 
@@ -98,17 +96,26 @@ function App() {
     <div className="App">
       <div className="content">
         <Routes>
-
           <Route
             exact
             path="/"
-            element={<Main onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists} createListHandler={createListHandler} deleteListHandler={deleteListHandler} />}
+            element={<Main 
+              onOpenItemCreation={onOpenItemCreation} 
+              isCreateItemActive={isCreateItemActive} 
+              onCloseItemCreation={onCloseItemCreation} 
+              lists={lists} 
+              createListHandler={createListHandler} 
+              deleteListHandler={deleteListHandler} 
+              />}
           />
 
           <Route
             path="/list/:id"
             element={<Products
-              onOpenItemCreation={onOpenItemCreation} isCreateItemActive={isCreateItemActive} onCloseItemCreation={onCloseItemCreation} lists={lists}
+              onOpenItemCreation={onOpenItemCreation} 
+              isCreateItemActive={isCreateItemActive} 
+              onCloseItemCreation={onCloseItemCreation} 
+              lists={lists}
               createProductHandler={createProductHandler}
               deleteProductHandler={deleteProductHandler}
               checkProductHandler={checkProductHandler}

@@ -1,10 +1,8 @@
 
 import './Product.css';
 
-
 const Product = ({ name, id, onDeleteProduct, onCheckProduct, status, onOpenItemEdition }) => {
 
-    //добавить общий стиль для кнопки
     return (
         <div className='product'>
             <button

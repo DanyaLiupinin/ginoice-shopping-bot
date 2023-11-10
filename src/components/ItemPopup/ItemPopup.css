@@ -63,7 +63,6 @@
 }
 
 .itemPopup__buttons button {
-    
     width: 45%;
 }
 
@@ -73,7 +72,7 @@
     text-align: left;
     width: 100%;
     position: absolute;
-    bottom: 27%;
+    bottom: 33%;
     left: 0;
-    font-size: 15px;
+    font-size: 12px;
 }
