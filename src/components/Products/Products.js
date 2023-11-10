@@ -103,7 +103,7 @@ const Products = ({
                                         ))
                                         }
                                     </> :
-                                    <p className='products__empty'>there are no product in this list</p>
+                                    <p className='products__empty'>there are no products in this list</p>
                             }
                             <button onClick={onOpenItemCreation} type='button' className='green-button'>
                                 New product
