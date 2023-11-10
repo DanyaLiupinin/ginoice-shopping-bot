@@ -74,3 +74,14 @@
     color: white;
     width: 45%;
 }
+
+.itemPopup__error {
+    margin: 0;
+    color: red;
+    text-align: left;
+    width: 100%;
+    position: absolute;
+    bottom: 27%;
+    left: 0;
+    font-size: 15px;
+}

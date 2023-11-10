@@ -6,14 +6,18 @@ const ItemPopup = ({onClose, isActive, onSubmit, text, submitAction, type, prevV
 //type: create | edit
 
     const [value, setValue] = useState('');
+    const [error, setError] = useState(false);
 
     // добаавить валидацию и вывод ошибки
     const onCreateList = (e) => {
         e.preventDefault();
         if (!value == '') {
+            setError(false)
             onSubmit(value);
             setValue('');
             onClose();
+        } else {
+            setError(true)
         }
     }
 
@@ -29,6 +33,8 @@ const ItemPopup = ({onClose, isActive, onSubmit, text, submitAction, type, prevV
             <h2 className='itemPopup__title'>{type === 'create' ? `your ${text} name` : `new name for ${prevValue}`}</h2>
 
                 <input minLength={1} maxLength={25} value={value} onChange={(e) => setValue(e.target.value)}></input>
+                {error ? <p className="itemPopup__error"
+                >enter from 1 to 50 characters</p> : ''}
                 <div className='itemPopup__buttons'>
                     <button type='button' onClick={onClosePopup}>Cancel</button>
                     <button type='submit'>{submitAction}</button>
