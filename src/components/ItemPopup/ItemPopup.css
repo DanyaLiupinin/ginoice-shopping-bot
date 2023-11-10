@@ -1,6 +1,5 @@
-.createItem {
+.itemPopup {
     height: 100vh;
-    color: #D2C2C2;
     position: fixed;
     bottom: -100vh;
     left: 0;
@@ -12,11 +11,11 @@
     max-width: 500px;
 }
 
-.createItem_active {
+.itemPopup_active {
     bottom: 0;
 }
 
-.createItem__form {
+.itemPopup__form {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,7 +29,7 @@
     align-items: center;
 }
 
-.createItem__title {
+.itemPopup__title {
     margin: 0;
     font-size: 20px;
     width: 100%;
@@ -38,7 +37,7 @@
     text-align: left;
 }
 
-.createItem__form input {
+.itemPopup__form input {
     background-color: none;
     margin: 20px 0 0;
     padding: 0 0 0 10px;
@@ -51,19 +50,19 @@
     font-size: 18px;
 }
 
-.createItem__form input:focus {
+.itemPopup__form input:focus {
     border: 0;
     outline: none;
 }
 
-.createLit__buttons {
+.itemPopup__buttons {
     margin-top: 10%;
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.createLit__buttons button {
+.itemPopup__buttons button {
     background-color: #43bcae95;
     
     border: none;

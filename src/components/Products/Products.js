@@ -3,13 +3,11 @@ import { useEffect, useState } from 'react';
 
 import './Products.css';
 
-import CreateItem from '../CreateItem/CreateItem';
-import EditItem from '../EditItem/EditItem';
 import Product from './Product/Product';
+import ItemPopup from '../ItemPopup/ItemPopup';
 
 const Products = ({ lists, onCloseItemCreation, isCreateItemActive, onOpenItemCreation, createProductHandler, deleteProductHandler, checkProductHandler, editProductHandler }) => {
 
-    
 const navigate = useNavigate();
     const [list, setList] = useState();
     const [isEditItemActive, setEditItemActive] = useState(false);
@@ -52,18 +50,22 @@ const navigate = useNavigate();
 
     return (
         <section className='products'>
-            <CreateItem
+            <ItemPopup 
+                type={'create'}
+                submitAction={'create'}
                 isActive={isCreateItemActive}
                 onClose={onCloseItemCreation}
-                onCreate={onCreateProduct}
-                type={'product'}
-                action={'create'}
+                onSubmit={onCreateProduct}
+                text={'product'}
             />
-            <EditItem 
+            <ItemPopup 
+                type={'edit'}
+                submitAction={'Save'}
                 isActive={isEditItemActive}
                 onClose={onCloseItemEdition}
-                prevValue={editItemVal ? editItemVal.value : ''}
                 onSubmit={onEditProduct}
+                text={'product'}
+                prevValue={editItemVal ? editItemVal.value : ''}
             />
 
             <button className='products__goback-btn' type="button" onClick={() => navigate(-1)}>
@@ -94,12 +96,9 @@ const navigate = useNavigate();
                                     </> :
                                     <p className='products__empty'>there are no product in this list</p>
                             }
-
-
                             <button onClick={onOpenItemCreation} type='button' className='products__add-button'>
                                 New product
                             </button>
-
                         </div>
                     </>
                     :

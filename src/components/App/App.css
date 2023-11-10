@@ -11,3 +11,7 @@
 h1, h2, p {
     color: #D2C2C2;
 }
+
+button {
+    cursor: pointer;
+}

@@ -1,20 +1,21 @@
 import "./Main.css";
 
-import CreateItem from "../CreateItem/CreateItem";
 import Lists from "./Lists/Lists";
 import Empty from "./Empty/Empty";
+import ItemPopup from "../ItemPopup/ItemPopup";
 
 const Main = ({ lists, createListHandler, deleteListHandler, onCloseItemCreation, isCreateItemActive, onOpenItemCreation }) => {
-   
+
     return (
         <>
             <section className="main">
-                <CreateItem
+                <ItemPopup
+                    type={'create'}
+                    submitAction={'create'}
                     isActive={isCreateItemActive}
                     onClose={onCloseItemCreation}
-                    onCreate={createListHandler}
-                    type={'list'}
-                    action={'create'}
+                    onSubmit={createListHandler}
+                    text={'list'}
                 />
 
                 <h1 className="main__title">My lists</h1>
