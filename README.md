@@ -1,3 +1,3 @@
 # Test shopping telegram web app for ginoice
 
-@ginoiceShoppinglistBot
+ https://t.me/testTaskShoppingBot
