@@ -3,12 +3,10 @@ import { useState } from "react";
 import './ItemPopup.css';
 
 const ItemPopup = ({onClose, isActive, onSubmit, text, submitAction, type, prevValue}) => {
-//type: create | edit
 
     const [value, setValue] = useState('');
     const [error, setError] = useState(false);
 
-    // добаавить валидацию и вывод ошибки
     const onCreateList = (e) => {
         e.preventDefault();
         if (!value == '') {
@@ -36,8 +34,8 @@ const ItemPopup = ({onClose, isActive, onSubmit, text, submitAction, type, prevV
                 {error ? <p className="itemPopup__error"
                 >enter from 1 to 50 characters</p> : ''}
                 <div className='itemPopup__buttons'>
-                    <button type='button' onClick={onClosePopup}>Cancel</button>
-                    <button type='submit'>{submitAction}</button>
+                    <button className="green-button"  type='button' onClick={onClosePopup}>Cancel</button>
+                    <button className="green-button" type='submit'>{submitAction}</button>
                 </div>
             </form>
         </div>

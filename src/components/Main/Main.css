@@ -9,18 +9,3 @@
     padding-top: 20%;
     margin: 0;
 }
-
-
-
-.main__create-btn {
-    background-color: #43bcae95;
-    
-    border: none;
-    box-shadow: none;
-    padding: 4px;
-    border-radius: 15px;
-    width: 90%;
-    height: 35px;
-    color: white;
-    margin-top: 20%;
-}

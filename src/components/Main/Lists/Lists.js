@@ -2,9 +2,7 @@ import './Lists.css';
 import { Link } from "react-router-dom";
 
 const Lists = ({lists, deleteListHandler}) => {
-
     return (
-        
         <div className='lists'>
                         {
                             lists.map((list, index) => {

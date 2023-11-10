@@ -4,7 +4,14 @@ import Lists from "./Lists/Lists";
 import Empty from "./Empty/Empty";
 import ItemPopup from "../ItemPopup/ItemPopup";
 
-const Main = ({ lists, createListHandler, deleteListHandler, onCloseItemCreation, isCreateItemActive, onOpenItemCreation }) => {
+const Main = ({
+    lists,
+    createListHandler,
+    deleteListHandler,
+    onCloseItemCreation,
+    isCreateItemActive,
+    onOpenItemCreation
+}) => {
 
     return (
         <>
@@ -20,11 +27,16 @@ const Main = ({ lists, createListHandler, deleteListHandler, onCloseItemCreation
 
                 <h1 className="main__title">My lists</h1>
 
-                {lists && lists.length > 0 ? <Lists lists={lists} deleteListHandler={deleteListHandler} /> : <Empty />}
+                {lists && lists.length > 0 ?
+                    <Lists
+                        lists={lists}
+                        deleteListHandler={deleteListHandler}
+                    /> :
+                    <Empty />}
 
                 <button
                     onClick={onOpenItemCreation}
-                    className="main__create-btn"
+                    className=" green-button "
                 >
                     create
                 </button>

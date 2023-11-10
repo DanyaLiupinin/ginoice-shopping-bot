@@ -63,15 +63,7 @@
 }
 
 .itemPopup__buttons button {
-    background-color: #43bcae95;
     
-    border: none;
-    box-shadow: none;
-    padding: 4px;
-    border-radius: 15px;
-    width: 100px;
-    height: 30px;
-    color: white;
     width: 45%;
 }
 

@@ -6,9 +6,19 @@ import './Products.css';
 import Product from './Product/Product';
 import ItemPopup from '../ItemPopup/ItemPopup';
 
-const Products = ({ lists, onCloseItemCreation, isCreateItemActive, onOpenItemCreation, createProductHandler, deleteProductHandler, checkProductHandler, editProductHandler }) => {
+const Products = ({
+    lists,
+    onCloseItemCreation,
+    isCreateItemActive,
+    onOpenItemCreation,
+    createProductHandler,
+    deleteProductHandler,
+    checkProductHandler,
+    editProductHandler
+}) => {
 
-const navigate = useNavigate();
+    const navigate = useNavigate();
+
     const [list, setList] = useState();
     const [isEditItemActive, setEditItemActive] = useState(false);
     const [editItemVal, setEditItemVal] = useState(null);
@@ -33,7 +43,7 @@ const navigate = useNavigate();
 
     const onOpenItemEdition = (value, id) => {
         setEditItemActive(true)
-        setEditItemVal({id, value})
+        setEditItemVal({ id, value })
     }
 
     const onCloseItemEdition = () => {
@@ -50,7 +60,7 @@ const navigate = useNavigate();
 
     return (
         <section className='products'>
-            <ItemPopup 
+            <ItemPopup
                 type={'create'}
                 submitAction={'create'}
                 isActive={isCreateItemActive}
@@ -58,7 +68,7 @@ const navigate = useNavigate();
                 onSubmit={onCreateProduct}
                 text={'product'}
             />
-            <ItemPopup 
+            <ItemPopup
                 type={'edit'}
                 submitAction={'Save'}
                 isActive={isEditItemActive}
@@ -69,7 +79,7 @@ const navigate = useNavigate();
             />
 
             <button className='products__goback-btn' type="button" onClick={() => navigate(-1)}>
-            ←
+                ←
             </button>
             {
                 list ?
@@ -77,26 +87,25 @@ const navigate = useNavigate();
                         <h2 className='products__title'>{list.name}</h2>
                         <div className='products__container'>
                             {
-                                list.products && list.products.length > 0 ?
+                                list.products?.length > 0?
                                     <>
-                                        {list.products.map((product, index) => {
-                                            return (
-                                                <Product 
-                                                key={index} 
-                                                name={product.name} 
-                                                status={product.status} 
-                                                id={index} 
-                                                onDeleteProduct={onDeleteProduct} 
-                                                onCheckProduct={onCheckProduct}
-                                                onOpenItemEdition={onOpenItemEdition}
+                                        {list.products.map((product, index) => ( 
+                                                <Product
+                                                    key={index}
+                                                    name={product.name}
+                                                    status={product.status}
+                                                    id={index}
+                                                    onDeleteProduct={onDeleteProduct}
+                                                    onCheckProduct={onCheckProduct}
+                                                    onOpenItemEdition={onOpenItemEdition}
                                                 />
-                                            )
-                                        })
+                                            
+                                        ))
                                         }
                                     </> :
                                     <p className='products__empty'>there are no product in this list</p>
                             }
-                            <button onClick={onOpenItemCreation} type='button' className='products__add-button'>
+                            <button onClick={onOpenItemCreation} type='button' className='green-button'>
                                 New product
                             </button>
                         </div>

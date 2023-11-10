@@ -27,17 +27,6 @@
     margin-top: 15%;
 }
 
-.products__add-button {
-    background-color: #43bcae95;
-    border: none;
-    box-shadow: none;
-    padding: 4px;
-    border-radius: 15px;
-    width: 90%;
-    height: 35px;
-    color: white;
-    margin-top: 5%;
-}
 
 .list-doesnt-exist {
     color: white;
